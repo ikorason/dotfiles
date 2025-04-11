@@ -100,17 +100,6 @@ return {
     },
   },
 
-  -- animations
-  -- {
-  --   "echasnovski/mini.animate",
-  --   event = "VeryLazy",
-  --   opts = function(_, opts)
-  --     opts.scroll = {
-  --       enable = false,
-  --     }
-  --   end,
-  -- },
-
   -- buffer line
   {
     "akinsho/bufferline.nvim",
@@ -159,10 +148,5 @@ return {
         end,
       })
     end,
-  },
-
-  {
-    "nvimdev/dashboard-nvim",
-    event = "VimEnter",
   },
 }

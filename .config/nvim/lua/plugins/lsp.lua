@@ -1,22 +1,4 @@
 return {
-  -- tools
-  {
-    "williamboman/mason.nvim",
-    opts = function(_, opts)
-      vim.list_extend(opts.ensure_installed, {
-        -- lua stuff
-        "lua-language-server",
-        "stylua",
-        "luacheck",
-        -- web dev stuff
-        "typescript-language-server",
-        "mdx-analyzer",
-        -- go
-        "gopls",
-      })
-    end,
-  },
-
   -- lsp servers
   {
     "neovim/nvim-lspconfig",
