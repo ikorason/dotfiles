@@ -44,5 +44,5 @@ vim.cmd([[let &t_Ce = "\e[4:0m"]])
 -- Add asterisks in block comments
 vim.opt.formatoptions:append({ "r" })
 
-vim.cmd([[au BufNewFile,BufRead *.astro setf astro]])
-vim.cmd([[au BufNewFile,BufRead Podfile setf ruby]])
+vim.g.lazyvim_prettier_needs_config = true
+vim.g.lazyvim_cmp = "blink.cmp"

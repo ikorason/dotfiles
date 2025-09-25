@@ -10,9 +10,6 @@ local opts = { noremap = true, silent = true }
 keymap.set("n", "+", "<C-a>")
 keymap.set("n", "-", "<C-x>")
 
--- Delete a word backwards
-keymap.set("n", "dw", "vb_d")
-
 -- Select all
 keymap.set("n", "<C-a>", "gg<S-v>G")
 
@@ -34,11 +31,6 @@ keymap.set("n", "<C-w><left>", "<C-w><")
 keymap.set("n", "<C-w><right>", "C-w>>")
 keymap.set("n", "<C-w><up>", "C-w>+")
 keymap.set("n", "<C-w><down>", "C-w>-")
-
--- Diagnostics
-keymap.set("n", "<C-j>", function()
-  vim.diagnostic.goto_next()
-end, opts)
 
 function M.setup_copilot_keymaps()
   return {
