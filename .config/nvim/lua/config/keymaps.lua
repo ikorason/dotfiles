@@ -32,6 +32,8 @@ keymap.set("n", "<C-w><right>", "C-w>>")
 keymap.set("n", "<C-w><up>", "C-w>+")
 keymap.set("n", "<C-w><down>", "C-w>-")
 
+keymap.set("n", "<leader>rw", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/g<Left><Left>]], { desc = "Replace word under cursor" })
+
 function M.setup_copilot_keymaps()
   return {
     { "<leader>ap", ":Copilot panel<CR>", desc = "Copilot panel" },

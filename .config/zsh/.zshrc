@@ -53,3 +53,11 @@ alias dstop='docker ps -q | xargs -p docker stop'
 # Remove all containers (both running and stopped)
 # Note: You may want to stop containers first with dstop
 alias drm='docker ps -aq | xargs -p docker rm'
+
+# pnpm
+export PNPM_HOME="/Users/irfannito/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
