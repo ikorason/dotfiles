@@ -6,7 +6,7 @@ Personal dotfiles for macOS. One command to set up a new machine.
 
 | Tool | Description |
 |------|-------------|
-| [Neovim](https://neovim.io/) | Modern Vim-based editor with LazyVim config |
+| [Neovim](https://neovim.io/) | Modern Vim-based editor with LazyVim |
 | [WezTerm](https://wezfurlong.org/wezterm/) | GPU-accelerated terminal emulator |
 | [tmux](https://github.com/tmux/tmux) | Terminal multiplexer |
 | [Zsh](https://www.zsh.org/) | Shell with Oh My Zsh |
@@ -15,95 +15,83 @@ Personal dotfiles for macOS. One command to set up a new machine.
 ## Quick Start
 
 ```bash
-# Clone the repository
 git clone https://github.com/ikorason/dotfiles.git ~/dotfiles
-
-# Run the install script
 cd ~/dotfiles
 ./install.sh
 ```
 
 The install script will:
 
-1. Install [Homebrew](https://brew.sh/) (if not already installed)
+1. Install [Homebrew](https://brew.sh/) if not present
 2. Install all dependencies from `Brewfile`
-3. Install [Oh My Zsh](https://ohmyz.sh/)
+3. Install [Oh My Zsh](https://ohmyz.sh/) and plugins
 4. Create symlinks for all configurations
-5. Install fonts from the `fonts/` directory
 
 ## Repository Structure
 
 ```
 dotfiles/
-├── install.sh              # Bootstrap script
-├── Brewfile                # Homebrew dependencies
-├── config/
-│   ├── nvim/               # Neovim configuration (LazyVim)
-│   ├── wezterm/
-│   │   └── wezterm.lua     # WezTerm configuration
-│   ├── tmux/
-│   │   └── tmux.conf       # tmux configuration
-│   └── zsh/
-│       └── zshrc           # Zsh configuration
-└── fonts/                  # Custom fonts (copy .ttf/.otf files here)
+├── install.sh                  # Bootstrap script
+├── Brewfile                    # Homebrew dependencies
+├── .gitignore
+└── config/
+    ├── nvim/                   # Neovim (LazyVim)
+    │   ├── init.lua
+    │   └── lua/
+    │       ├── config/         # Core settings
+    │       └── plugins/        # Plugin configs
+    ├── wezterm/
+    │   └── wezterm.lua         # WezTerm config
+    ├── tmux/
+    │   └── tmux.conf           # tmux config
+    └── zsh/
+        └── zshrc               # Zsh config
 ```
+
+## Symlinks
+
+The install script creates these symlinks:
+
+| Source | Target |
+|--------|--------|
+| `config/nvim` | `~/.config/nvim` |
+| `config/wezterm` | `~/.config/wezterm` |
+| `config/tmux` | `~/.config/tmux` |
+| `config/zsh/zshrc` | `~/.zshrc` |
 
 ## Configurations
 
 ### Neovim
 
-LazyVim-based configuration with:
-
-- LSP support
-- Fuzzy finding with fzf-lua
-- Custom colorscheme (Everforest)
-- And more...
-
-**Config location:** `~/.config/nvim` → `~/dotfiles/config/nvim`
+LazyVim-based configuration with LSP, fuzzy finding (fzf-lua), and Everforest colorscheme.
 
 ### WezTerm
 
-GPU-accelerated terminal with:
-
-- Everforest Dark color scheme
-- Mononoki font
+- Font: mononoki Nerd Font (size 16)
+- Color scheme: Everforest Dark
+- Background opacity with blur
 - Minimal window decorations
-- Background blur
-
-**Config location:** `~/.config/wezterm` → `~/dotfiles/config/wezterm`
 
 ### tmux
 
-Terminal multiplexer configured with:
-
-- Prefix: `Ctrl-a` (instead of `Ctrl-b`)
+- Prefix: `Ctrl-a`
 - Mouse support enabled
-- Vim-style pane navigation (`h`, `j`, `k`, `l`)
-- Split panes: `|` (horizontal), `-` (vertical)
-- Status bar at top
-- True color support
-
-**Key bindings:**
+- Vim-style pane navigation
 
 | Key | Action |
 |-----|--------|
-| `Ctrl-a \|` | Split pane horizontally |
-| `Ctrl-a -` | Split pane vertically |
+| `Ctrl-a \|` | Split horizontally |
+| `Ctrl-a -` | Split vertically |
 | `Ctrl-a h/j/k/l` | Navigate panes |
 | `Ctrl-a H/J/K/L` | Resize panes |
 | `Ctrl-a c` | New window |
 | `Ctrl-a r` | Reload config |
 
-**Config location:** `~/.config/tmux` → `~/dotfiles/config/tmux`
-
 ### Zsh
 
-Zsh shell with Oh My Zsh and:
+Oh My Zsh with Starship prompt.
 
-- Starship prompt
-- Plugins: git, zsh-autosuggestions, zsh-syntax-highlighting, z
-- Modern CLI tool aliases (eza, bat, zoxide)
-- Useful git aliases
+**Plugins:** git, zsh-autosuggestions, zsh-syntax-highlighting, z
 
 **Aliases:**
 
@@ -121,70 +109,43 @@ Zsh shell with Oh My Zsh and:
 | `t` | `tmux` |
 | `ta` | `tmux attach` |
 
-**Config location:** `~/.zshrc` → `~/dotfiles/config/zsh/zshrc`
-
-## Dependencies
-
-Installed via Homebrew (`Brewfile`):
+## Dependencies (Brewfile)
 
 **CLI Tools:**
-
 - neovim, tmux, git, lazygit
-- ripgrep, fd, fzf (search tools)
-- eza, bat, zoxide (modern CLI replacements)
-- starship (prompt)
+- ripgrep, fd, fzf
+- eza, bat, zoxide
+- starship
 
 **Applications:**
-
 - WezTerm
 
 **Fonts:**
-
-- JetBrains Mono Nerd Font
-- Fira Code Nerd Font
+- mononoki Nerd Font
 
 ## Post-Installation
 
-### Install Zsh Plugins
-
-```bash
-# zsh-autosuggestions
-git clone https://github.com/zsh-users/zsh-autosuggestions \
-  ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-
-# zsh-syntax-highlighting
-git clone https://github.com/zsh-users/zsh-syntax-highlighting \
-  ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-```
-
-### Reload Shell
+Restart your terminal or run:
 
 ```bash
 source ~/.zshrc
 ```
 
-## Updating
+Neovim will auto-install plugins on first launch.
 
-Pull the latest changes and re-run the install script:
+## Local Overrides
+
+Create `~/.zshrc.local` for machine-specific settings (not tracked in git):
+
+```bash
+# Example: work-specific paths
+export PATH="$HOME/work/bin:$PATH"
+```
+
+## Updating
 
 ```bash
 cd ~/dotfiles
 git pull
 ./install.sh
 ```
-
-## Customization
-
-### Adding New Configs
-
-1. Add your config to the appropriate directory in `config/`
-2. Update `install.sh` to create the symlink
-3. Add any new dependencies to `Brewfile`
-
-### Local Overrides
-
-Create a `~/.zshrc.local` file for machine-specific settings (not tracked in git).
-
-## License
-
-MIT
