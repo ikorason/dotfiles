@@ -1,6 +1,3 @@
-# Taps
-tap "homebrew/bundle"
-
 # CLI Tools
 brew "neovim"
 brew "tmux"
@@ -19,5 +16,4 @@ brew "starship"
 cask "wezterm"
 
 # Fonts (Nerd Fonts for terminal icons)
-tap "homebrew/cask-fonts"
 cask "font-mononoki-nerd-font"
