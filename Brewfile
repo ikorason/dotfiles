@@ -11,6 +11,7 @@ brew "eza"
 brew "bat"
 brew "zoxide"
 brew "starship"
+brew "node"
 
 # Applications
 cask "wezterm"
