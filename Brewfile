@@ -13,8 +13,14 @@ brew "zoxide"
 brew "starship"
 brew "node"
 
+# Docker Tools
+brew "lazydocker"
+brew "dive"
+brew "hadolint"
+
 # Applications
 cask "wezterm"
+cask "docker"
 
 # Fonts (Nerd Fonts for terminal icons)
 cask "font-mononoki-nerd-font"

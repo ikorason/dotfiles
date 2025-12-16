@@ -11,6 +11,8 @@ Personal dotfiles for macOS. One command to set up a new machine.
 | [tmux](https://github.com/tmux/tmux) | Terminal multiplexer |
 | [Zsh](https://www.zsh.org/) | Shell with Oh My Zsh |
 | [Starship](https://starship.rs/) | Cross-shell prompt |
+| [Docker](https://www.docker.com/) | Containerization platform |
+| [LazyDocker](https://github.com/jesseduffield/lazydocker) | Terminal UI for Docker |
 
 ## Quick Start
 
@@ -108,6 +110,10 @@ Oh My Zsh with Starship prompt.
 | `gp` | `git push` |
 | `t` | `tmux` |
 | `ta` | `tmux attach` |
+| `d` | `docker` |
+| `dc` | `docker compose` |
+| `dps` | `docker ps` |
+| `lzd` | `lazydocker` |
 
 ## Dependencies (Brewfile)
 
@@ -115,10 +121,16 @@ Oh My Zsh with Starship prompt.
 - neovim, tmux, git, lazygit
 - ripgrep, fd, fzf
 - eza, bat, zoxide
-- starship
+- starship, node
+
+**Docker Tools:**
+- lazydocker (TUI for Docker)
+- dive (image layer explorer)
+- hadolint (Dockerfile linter)
 
 **Applications:**
 - WezTerm
+- Docker Desktop
 
 **Fonts:**
 - mononoki Nerd Font
