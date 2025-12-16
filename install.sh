@@ -145,6 +145,25 @@ install_fonts() {
     fi
 }
 
+# Install CLI tools
+install_cli_tools() {
+    # GitHub Copilot CLI
+    if ! command -v copilot &> /dev/null; then
+        info "Installing GitHub Copilot CLI..."
+        brew install --cask copilot-cli
+    else
+        info "GitHub Copilot CLI already installed"
+    fi
+
+    # Claude Code
+    if ! command -v claude &> /dev/null; then
+        info "Installing Claude Code..."
+        brew install --cask claude-code
+    else
+        info "Claude Code already installed"
+    fi
+}
+
 # Main installation
 main() {
     echo ""
@@ -158,6 +177,7 @@ main() {
     install_oh_my_zsh
     setup_symlinks
     install_fonts
+    install_cli_tools
 
     echo ""
     info "Installation complete!"
