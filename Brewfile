@@ -13,6 +13,11 @@ brew "zoxide"
 brew "starship"
 brew "node"
 
+# Programming Languages
+brew "go"
+brew "gopls"
+brew "rust"
+
 # Docker Tools
 brew "lazydocker"
 brew "dive"

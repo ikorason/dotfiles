@@ -121,7 +121,12 @@ Oh My Zsh with Starship prompt.
 - neovim, tmux, git, lazygit
 - ripgrep, fd, fzf
 - eza, bat, zoxide
-- starship, node
+- starship
+
+**Programming Languages:**
+- Node.js
+- Go (with gopls language server)
+- Rust
 
 **Docker Tools:**
 - lazydocker (TUI for Docker)
