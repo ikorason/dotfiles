@@ -3,7 +3,8 @@ local config = wezterm.config_builder()
 
 -- Font
 config.font = wezterm.font("mononoki Nerd Font")
-config.font_size = 16
+config.font_size = 18
+config.line_height = 1.2 -- Increase vertical spacing between lines
 
 -- Color scheme
 config.color_scheme = "Everforest Dark (Gogh)"
