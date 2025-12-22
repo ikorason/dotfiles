@@ -12,6 +12,7 @@ brew "bat"
 brew "zoxide"
 brew "starship"
 brew "node"
+brew "tree-sitter-cli"
 
 # Programming Languages
 brew "go"
