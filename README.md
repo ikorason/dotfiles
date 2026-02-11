@@ -7,6 +7,7 @@ Personal dotfiles for macOS. One command to set up a new machine.
 | Tool | Description |
 |------|-------------|
 | [Neovim](https://neovim.io/) | Modern Vim-based editor with LazyVim |
+| [Ghostty](https://ghostty.org/) | Fast, native terminal emulator |
 | [WezTerm](https://wezfurlong.org/wezterm/) | GPU-accelerated terminal emulator |
 | [tmux](https://github.com/tmux/tmux) | Terminal multiplexer |
 | [Zsh](https://www.zsh.org/) | Shell with Oh My Zsh |
@@ -42,6 +43,8 @@ dotfiles/
     │   └── lua/
     │       ├── config/         # Core settings
     │       └── plugins/        # Plugin configs
+    ├── ghostty/
+    │   └── config              # Ghostty config
     ├── wezterm/
     │   └── wezterm.lua         # WezTerm config
     ├── tmux/
@@ -57,6 +60,7 @@ The install script creates these symlinks:
 | Source | Target |
 |--------|--------|
 | `config/nvim` | `~/.config/nvim` |
+| `config/ghostty` | `~/.config/ghostty` |
 | `config/wezterm` | `~/.config/wezterm` |
 | `config/tmux` | `~/.config/tmux` |
 | `config/zsh/zshrc` | `~/.zshrc` |
@@ -66,6 +70,11 @@ The install script creates these symlinks:
 ### Neovim
 
 LazyVim-based configuration with LSP, fuzzy finding (fzf-lua), and Everforest colorscheme.
+
+### Ghostty
+
+- Font: mononoki Nerd Font (size 18)
+- Theme: Everforest Dark Hard
 
 ### WezTerm
 
@@ -134,6 +143,7 @@ Oh My Zsh with Starship prompt.
 - hadolint (Dockerfile linter)
 
 **Applications:**
+- Ghostty
 - WezTerm
 - Docker Desktop
 

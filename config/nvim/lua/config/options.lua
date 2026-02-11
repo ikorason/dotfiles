@@ -46,3 +46,5 @@ vim.opt.formatoptions:append({ "r" })
 
 vim.g.lazyvim_prettier_needs_config = true
 vim.g.lazyvim_cmp = "blink.cmp"
+
+vim.opt.termguicolors = true

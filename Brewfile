@@ -25,8 +25,12 @@ brew "dive"
 brew "hadolint"
 
 # Applications
+cask "ghostty"
 cask "wezterm"
 cask "docker"
 
 # Fonts (Nerd Fonts for terminal icons)
 cask "font-mononoki-nerd-font"
+
+# Language server
+brew "rust-analyzer"

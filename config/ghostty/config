@@ -1,0 +1,11 @@
+# Ghostty Configuration
+# https://ghostty.org/docs/config
+
+# Font
+font-family = Mononoki Nerd Font Mono
+font-size = 18
+adjust-cell-height = 20%
+
+# Theme
+theme = Everforest Dark Hard
+
