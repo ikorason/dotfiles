@@ -90,6 +90,10 @@ if command -v fzf &> /dev/null; then
     source <(fzf --zsh)
 fi
 
+# Fix cursor shape - force beam cursor in all contexts (including tmux)
+_fix_cursor() { printf '\e[6 q' }
+precmd_functions+=(_fix_cursor)
+
 # Starship prompt
 if command -v starship &> /dev/null; then
     eval "$(starship init zsh)"
