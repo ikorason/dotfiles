@@ -12,7 +12,7 @@ theme = Everforest Dark Hard
 # Window
 macos-titlebar-style = tabs
 window-padding-x = 8
-window-padding-y = 4
+window-padding-y = 8
 window-padding-balance = true
 background-opacity = 0.96
 background-blur = 10
