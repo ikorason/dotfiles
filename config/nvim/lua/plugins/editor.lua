@@ -5,6 +5,19 @@ return {
   },
 
   {
+    "folke/trouble.nvim",
+    opts = {
+      modes = {
+        symbols = {
+          win = {
+            size = 60, -- columns; use a fraction like 0.4 for a percentage of screen width
+          },
+        },
+      },
+    },
+  },
+
+  {
     "dinhhuy258/git.nvim",
     event = "BufReadPre",
     opts = {

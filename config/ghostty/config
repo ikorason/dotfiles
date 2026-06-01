@@ -2,7 +2,7 @@
 # https://ghostty.org/docs/config
 
 # Font
-font-family = Mononoki Nerd Font Mono
+font-family = Mononoki Nerd Font
 font-size = 18
 font-thicken = true
 

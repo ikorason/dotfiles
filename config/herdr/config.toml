@@ -1,0 +1,37 @@
+onboarding = false
+
+[ui.sound]
+enabled = false
+
+[theme]
+name = "terminal"
+
+# Everforest Dark Hard — sainnhe/everforest
+[theme.custom]
+accent = "#83c092"
+# panel_bg inherits from terminal (set to Everforest Dark Hard #1e2326)
+surface0 = "#2e383c"
+surface1 = "#374145"
+surface_dim = "#272e33"
+overlay0 = "#7a8478"
+overlay1 = "#859289"
+text = "#d3c6aa"
+subtext0 = "#9da9a0"
+mauve = "#d699b6"
+green = "#a7c080"
+yellow = "#dbbc7f"
+red = "#e67e80"
+blue = "#7fbbb3"
+teal = "#83c092"
+peach = "#e69875"
+
+
+[keys]
+prefix = "ctrl+a"
+
+[ui.toast]
+delivery = "herdr"
+
+[ui]
+show_agent_labels_on_pane_borders = true
+agent_panel_scope = "all"
