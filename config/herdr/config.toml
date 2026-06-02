@@ -28,6 +28,7 @@ peach = "#e69875"
 
 [keys]
 prefix = "ctrl+a"
+split_vertical = "prefix+|"
 
 [ui.toast]
 delivery = "herdr"
